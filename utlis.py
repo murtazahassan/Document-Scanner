@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 ## TO STACK ALL THE IMAGES IN ONE WINDOW
-def stackImages(imgArray,scale):
+def stackImages(imgArray,scale,lables=[]):
     rows = len(imgArray)
     cols = len(imgArray[0])
     rowsAvailable = isinstance(imgArray[0], list)
@@ -28,6 +28,14 @@ def stackImages(imgArray,scale):
         hor= np.hstack(imgArray)
         hor_con= np.concatenate(imgArray)
         ver = hor
+    if len(lables) != 0:
+        eachImgWidth= int(ver.shape[1] / cols)
+        eachImgHeight = int(ver.shape[0] / rows)
+        print(eachImgHeight)
+        for d in range(0, rows):
+            for c in range (0,cols):
+                cv2.rectangle(ver,(c*eachImgWidth,eachImgHeight*d),(c*eachImgWidth+len(lables[d][c])*13+27,30+eachImgHeight*d),(255,255,255),cv2.FILLED)
+                cv2.putText(ver,lables[d][c],(eachImgWidth*c+10,eachImgHeight*d+20),cv2.FONT_HERSHEY_COMPLEX,0.7,(255,0,255),2)
     return ver
 
 def reorder(myPoints):
