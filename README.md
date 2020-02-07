@@ -1,7 +1,7 @@
 # Document Scanner
 
 
-[![Watch Video](https://github.com/murtazahassan/Tello-Object-Tracking/blob/master/Programming%20Drone.jpg)](https://youtu.be/ON_JubFRw8M)
+[![Watch Video](https://github.com/murtazahassan/Document-Scanner/blob/master/Documnet%20Scanner.jpg)](https://youtu.be/ON_JubFRw8M)
 
 In this video we are going to create a simple document scanner using opencv. We will  learn how to run this in real time and how we can save these images by pressing just a button on the keyboard. This Is perfect project for beginners as it is simple and covers the core principals of opencv. 
 
